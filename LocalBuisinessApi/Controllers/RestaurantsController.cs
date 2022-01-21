@@ -58,7 +58,7 @@ namespace LocalBuisinessApi.Controllers
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<Restaurant>> GetRestaurant([FromQuery]int id)
+    public async Task<ActionResult<Restaurant>> GetRestaurant(int id)
     {
         var restaurant = await _db.Restaurants.FindAsync(id);
 
@@ -71,7 +71,7 @@ namespace LocalBuisinessApi.Controllers
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Put([FromQuery]int id, [FromBody]Restaurant restaurant)
+    public async Task<IActionResult> Put(int id, [FromBody]Restaurant restaurant)
     {
       if (id != restaurant.RestaurantId)
       {
@@ -104,7 +104,7 @@ namespace LocalBuisinessApi.Controllers
     }
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteRestaurant([FromQuery]int id)
+    public async Task<IActionResult> DeleteRestaurant(int id)
     {
       var restaurant = await _db.Restaurants.FindAsync(id);
       if (restaurant == null)

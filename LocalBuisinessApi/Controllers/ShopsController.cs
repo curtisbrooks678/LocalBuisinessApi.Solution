@@ -58,7 +58,7 @@ namespace LocalBuisinessApi.Controllers
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<Shop>> GetShop([FromQuery]int id)
+    public async Task<ActionResult<Shop>> GetShop(int id)
     {
         var shop = await _db.Shops.FindAsync(id);
 
@@ -71,7 +71,7 @@ namespace LocalBuisinessApi.Controllers
     }
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Put([FromQuery]int id, [FromBody]Shop shop)
+    public async Task<IActionResult> Put(int id, [FromBody]Shop shop)
     {
       if (id != shop.ShopId)
       {
@@ -104,7 +104,7 @@ namespace LocalBuisinessApi.Controllers
     }
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteShop([FromQuery]int id)
+    public async Task<IActionResult> DeleteShop(int id)
     {
       var shop = await _db.Shops.FindAsync(id);
       if (shop == null)
