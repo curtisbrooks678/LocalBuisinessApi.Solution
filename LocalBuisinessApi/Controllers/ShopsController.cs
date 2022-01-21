@@ -20,7 +20,7 @@ namespace LocalBuisinessApi.Controllers
     }
 
     [HttpGet]
-    public ActionResult<IEnumerable<Shop>> Get([FromQuery]string name, [FromQuery]string address, [FromQuery]string specialty, [FromQuery]int rating)
+    public ActionResult<IEnumerable<Shop>> Get([FromQuery]string name, [FromQuery]string address, [FromQuery]string specialty, [FromQuery]int rating, [FromQuery]bool random)
     {
 
     var query = _db.Shops.AsQueryable();
@@ -43,6 +43,14 @@ namespace LocalBuisinessApi.Controllers
     if (rating != 0)
     {
     query = query.Where(entry => entry.Rating == rating);
+    }
+
+    if (random)
+    {
+      int length = query.Count() + 1;
+      Random rand = new Random();
+      int id = rand.Next(1, length);
+      query = query.Where(entry => entry.ShopId == id);
     }
 
     return query.ToList();
