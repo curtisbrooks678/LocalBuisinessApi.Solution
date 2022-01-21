@@ -34,7 +34,7 @@
 }
 }
 ```
-* _Make sure that [YOUR PASSWORD] match the database password of your local MySql server._
+* _Make sure that [YOUR PASSWORD] matches the database password of your local MySql server._
 
 ### Database Setup
 
@@ -62,7 +62,7 @@
 Explore the API endpoints in Postman.
 
 ### Using Swagger Documentation 
-To explore the CoffeeTracker API with NSwag, launch the project using `dotnet run` with the Terminal or Powershell, and input the following URL into your browser: `http://localhost:5000/swagger`
+To explore the Local Buisiness API with Swashbuckle, launch the project using `dotnet run` with the Terminal or Powershell, and input the following URL into your browser: `http://localhost:5000/swagger`
 
 ### Endpoints
 Base URL: `https://localhost:5000`
@@ -78,7 +78,7 @@ DELETE /api/{component}/{id}
 
 #### Example Query
 ```
-https://localhost:5000/api/restaurant/1
+https://localhost:5000/api/restaurants/1
 ```
 
 #### Sample JSON Response
@@ -107,12 +107,12 @@ DELETE /api/restaurants/{id}
 ```
 
 #### Path Parameters
-| Parameter | Type | Default | Required | Description |
-| :---: | :---: | :---: | :---: | --- |
-| name | string | none | true | Return matches by name.
-| address | string | none | true | Return any restaurants with a specific address. |
-| cuisine | string | none |true | Return restaurants matches with a specific cuisine. |
-| rating | int | none |true | Return restaurants matches with a specific rating (1-5). |
+| Parameter | Type | Required | Description |
+| :---: | :---: | :---: | --- |
+| name | string | true | Return any restaurants with a specific name. |
+| address | string | true | Return any restaurants with a specific address. |
+| cuisine | string | true | Return any restaurants with a specific cuisine. |
+| rating | int | true | Return any restaurants with a specific rating (1-5). |
 
 #### Example Query
 ```
@@ -145,12 +145,12 @@ DELETE /api/shops/{id}
 ```
 
 #### Path Parameters
-| Parameter | Type | Default | Required | Description |
-| :---: | :---: | :---: | :---: | --- |
-| name | string | none | true | Return matches by name.
-| address | string | none | true | Return any shops with a specific address. |
-| cuisine | string | none |true | Return shops matches with a specific specialty. |
-| rating | int | none |true | Return shops matches with a specific rating (1-5). |
+| Parameter | Type | Required | Description |
+| :---: | :---: | :---: | --- |
+| name | string | true | Return any shops with a specific name. |
+| address | string | true | Return any shops with a specific address. |
+| specialty | string | true | Return any shops with a specific specialty. |
+| rating | int | true | Return any shops with a specific rating (1-5). |
 
 #### Example Query
 ```
@@ -177,6 +177,6 @@ https://localhost:5000/api/shops/?specialty=crafts
 _[MIT](https://choosealicense.com/licenses/mit/) Copyright (c) 2022 Curtis Brooks_
 
 
-_____________________________________________________________________________________________________________
+
 
 
