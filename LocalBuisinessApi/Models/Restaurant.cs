@@ -15,7 +15,7 @@ namespace LocalBuisinessApi.Models
     [StringLength(100)]
     public string Cuisine { get; set; }
     [Required]
-    [Range(0, 5, ErrorMessage = "Rating must be between 0 and 5.")]
+    [Range(1, 5, ErrorMessage = "Rating must be between 1 and 5.")]
     public int Rating { get; set; }
   }
 }
