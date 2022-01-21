@@ -20,7 +20,7 @@ namespace LocalBuisinessApi
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<CretaceousParkContext>(opt =>
+            services.AddDbContext<LocalBuisinessApiContext>(opt =>
                 opt.UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
             services.AddControllers();
             services.AddMvc();
