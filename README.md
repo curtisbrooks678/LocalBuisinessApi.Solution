@@ -113,6 +113,7 @@ DELETE /api/restaurants/{id}
 | address | string | true | Return any restaurants with a specific address. |
 | cuisine | string | true | Return any restaurants with a specific cuisine. |
 | rating | int | true | Return any restaurants with a specific rating (1-5). |
+| random | bool | false | Return a random restaurant if parameter equals true in query. |
 
 #### Example Query
 ```
@@ -151,6 +152,7 @@ DELETE /api/shops/{id}
 | address | string | true | Return any shops with a specific address. |
 | specialty | string | true | Return any shops with a specific specialty. |
 | rating | int | true | Return any shops with a specific rating (1-5). |
+| random | bool | false | Return a random shop if parameter equals true in query. |
 
 #### Example Query
 ```
